@@ -9,8 +9,6 @@ import glob
 import tempfile
 import shutil
 
-# The rest of your code remains the same...
-
 
 def process_docx_files(docx_files, list_kw):
     """
@@ -52,20 +50,13 @@ def process_docx_files(docx_files, list_kw):
 
     return merged_doc
 
-# def merge_all_docx(docx_files, output_path):
-#     merged_doc = Document()
-#     for docx_file in docx_files:
-#         doc = Document(docx_file)
-#         for element in doc.element.body:
-#             merged_doc.element.body.append(element)
-#     merged_doc.save(output_path)
-
 def main():
-    st.title("Keyword Finder App")
-    st.write("Upload Word documents and an Excel file containing keywords")
+    # Inject the custom CSS
+    st.title("Recherche de mots clefs dans des documents Word")
+    st.write("Ce programme permet de rechercher des mots clefs dans des documents Word et de les mettre en évidence.")
     
-    docx_files = st.file_uploader("Upload Word documents", type=["docx"], accept_multiple_files=True)
-    xlsx_file = st.file_uploader("Upload Excel file", type=["xlsx"])
+    docx_files = st.file_uploader("Télécharger les dossiers docx", type=["docx"], accept_multiple_files=True)
+    xlsx_file = st.file_uploader("Télécharger les mots clefs dans un xlsx", type=["xlsx"])
 
     if docx_files and xlsx_file:
         df_kw = pd.read_excel(xlsx_file)
@@ -87,30 +78,17 @@ def main():
             with open(os.path.join(temp_dir, "final_merged.docx"), "wb") as f:
                 merged_doc.save(f)
 
-            # merged_filename = st.text_input("Merged DOCX Filename", "final_merged")
-                
-            # if st.button("Download Merged DOCX"):
-            #     st.markdown("### Download the merged DOCX file")
-            #     with st.spinner("Merging and saving..."):
-            #         # Merge the docx files and save the result
-            #         merge_all_docx(docx_file_list, os.path.join(temp_dir, merged_filename + ".docx"))
-
-            #         # Move the merged file to the user-specified location
             output_path = os.path.join(temp_dir, "final_merged.docx")
-            #         shutil.move(output_path, ".")
-
-            #     st.success("Merged DOCX file has been saved!")
-
 
             with open(output_path, "rb") as file:
                 btn = st.download_button(
-                        label="Download docx",
+                        label="Télécharger le fichier",
                         data=file,
                         file_name="final_merged.docx",
                         mime="application/octet-stream"
                     )
 
-            st.success("Merged DOCX file has been saved!")
+            st.success("Le fichier a été traité avec succès !")
 
 if __name__ == "__main__":
     main()
