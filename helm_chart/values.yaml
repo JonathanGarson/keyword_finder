@@ -1,0 +1,14 @@
+shiny:
+  image:
+    repository: jonathangarson/streamlitkeyword
+    tag: latest
+  ingress:
+    enabled: true
+    hostname: streamlitkeyword.lab.sspcloud.fr
+#  resources:
+#    requests:
+#      nvidia.com/gpu: 1
+#    limits:
+#      nvidia.com/gpu: 1
+  probe:
+    enabled: false
