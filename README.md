@@ -45,7 +45,7 @@ Project Organization
     │   ├── treatments     <- Scripts to treat docx text files.
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
-    ***
+***
 ## How to run the code 
 
 You can download the data on [Legifrance](https://www.legifrance.gouv.fr/) via the download.py script, it will webscrapped data from a list of URL that you can find in the raw data, in the file : full_data_link_legifrance.xlsx (for now only available on my [CamemBERT](https://github.com/JonathanGarson/CamemBERT_NER_2023/tree/main/data/raw) repo). Then treat them with the cleaning.py script. You need to upload a xlsx file containing all the keywords you're looking for and finally run extract_highlight_merged.py to obtain the final outputs.
