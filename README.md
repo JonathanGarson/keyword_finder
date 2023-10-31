@@ -1,7 +1,7 @@
 keyword_finder
 ==============================
 
-This project objective is to isolate keyword in some paragraphs in order to fasten the reading of docx or txt files. It will generate a unique docx file containing all the extracted paragraphs. Can also be used to extract contextual sentences in order to provide examples in training an NLP Model (please see my other repos on [spacy](https://github.com/JonathanGarson/spacy_NER_2023), on [CamemBERT](https://github.com/JonathanGarson/CamemBERT_NER_2023) or [GPT](https://github.com/JonathanGarson/gpt_2023).
+This project objective is to isolate keyword in some paragraphs in order to fasten the reading of docx or txt files. It will generate a unique docx file containing all the extracted paragraphs. It can also be used to extract contextual sentences in order to provide examples in training an NLP Model (please see my other repos on [spacy](https://github.com/JonathanGarson/spacy_NER_2023), on [CamemBERT](https://github.com/JonathanGarson/CamemBERT_NER_2023) or [GPT](https://github.com/JonathanGarson/gpt_2023)).
 
 There is no need to use the code as the app has been [deployed](https://streamlitkeyword.lab.sspcloud.fr/) online.
 
